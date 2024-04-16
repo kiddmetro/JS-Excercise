@@ -39,4 +39,5 @@ console.log(firstName, lastName);
 let myAge = 15;
 let yourAge = 20;
 
-console.log(myAge, yourAge);
+console.log(`I am ${myAge} years old.`);
+console.log(`You are ${yourAge} years old.`);
