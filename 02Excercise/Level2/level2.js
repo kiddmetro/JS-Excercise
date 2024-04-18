@@ -35,7 +35,21 @@ console.log(radNumOne);
 
 //QUESTION 8
 let randNumTwo = Math.floor(Math.random() * (100 - 50 + 1) + 50);
-console.log(randNumTwo)
+console.log(randNumTwo);
+
+// QUESTION 9
+let randNumThree = Math.floor((Math.random() * 255 ));
+console.log(randNumThree);
+
+
+// QUESTION 10
+let rand = "Javascript";
+let wordRandom = rand.length - 1;
+let randomNum = Math.round(Math.random() * wordRandom);
+console.log(rand.charAt(randomNum));
+console.log(rand.charAt(3));
+console.log(randomNum);
+
 
 
 
