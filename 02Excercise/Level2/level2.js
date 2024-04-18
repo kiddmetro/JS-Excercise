@@ -47,7 +47,6 @@ let rand = "Javascript";
 let wordRandom = rand.length - 1;
 let randomNum = Math.round(Math.random() * wordRandom);
 console.log(rand.charAt(randomNum));
-console.log(rand.charAt(3));
 console.log(randomNum);
 
 // QUESTION 11
