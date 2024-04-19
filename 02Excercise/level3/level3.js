@@ -30,3 +30,11 @@ let patternThree = /teaching/gi;
 let patternFour = /is/gi;
 console.log($wordReplaceFive.match(patternThree));
 console.log($wordReplaceFive.match(patternFour));
+
+// QUESTION 4
+const salary = 500;
+let bonus = 1000;
+let totalAnunualSalary = 500 * 12;
+let onlineCourse = 15000;
+let total = totalAnunualSalary + onlineCourse +bonus;
+console.log(total)
