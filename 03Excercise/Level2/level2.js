@@ -81,13 +81,13 @@ console.log(y);
 
 // QUESTION 9
 
-const hours = prompt("Enter Hours");
+/*const hours = prompt("Enter Hours");
 const emplyHours = prompt("Enter Rate Per Hour");
 
 const weekEarn = hours * emplyHours;
 
 alert(`Your weekly earning is ${weekEarn}`);
-
+*/
 // QUESTION 10
 
 const name = "clinton";
@@ -103,6 +103,42 @@ let lastName = "Igwe"
 let lenFirstName = firstName.length;
 let lenLastName = lastName.length;
 lenFirstName > lenLastName ? console.log(`Your first name, ${firstName} is Longer than your family name ${lastName}`) : console.log(`Your first name, ${firstName} is shorter than your family name ${lastName}`);
+
+// QUESTION 12
+
+let myAge = 250;
+let yourAge = 25;
+console.log(`I am ${myAge - yourAge} Years Older than you.`);
+
+// QUESTION 13
+/*const birthYear = prompt("Enter Birth Year");
+const convertBirthYear = Number(birthYear);
+const currentYear = new Date().getFullYear();
+const calAge = currentYear - convertBirthYear;
+const reqAge = 18 - calAge;
+
+calAge < 18 ? console.log(`You are ${calAge}. You will be allowed to drive after ${reqAge} years`) : console.log(`You are ${calAge}. You are old enough to drive`);*/
+
+// QUESTION 14
+
+// SKIP
+
+// const numYears = prompt("Enter Number of Years");
+// const numSec = Date.now();
+// const years = numSec * numYears
+// console.log(numSec)
+
+
+// QUESTION 15 
+let year = new Date().getFullYear();
+let month = new Date().getMonth();
+let date = new Date().getDate();
+let hour = new Date().getHours();
+let minutes = new Date().getMinutes();
+
+console.log(`${year}-${month}-${date} ${hour}:${minutes}`);
+console.log(`${date}-${month}-${year} ${hour}:${minutes}`);
+console.log(`${date}/${month}/${year} ${hour}:${minutes}`);
 
 
 
