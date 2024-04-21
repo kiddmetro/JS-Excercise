@@ -17,6 +17,8 @@ switch (true) {
     case num >= 0:
         console.log('F');
         break;
+    default:
+        console.log('Invalid Score');
 }
 
 //QUESTION 2
@@ -59,4 +61,19 @@ switch(userInput){
     case 'December':
         console.log('The Season is Winter');
         break;
+    default:
+        console.log('Invalid Month');
 }
+
+// QUESTION 3
+const day = prompt('What is the day Today?');
+
+if (day === 'Monday' || day === 'Tuesday' || day === 'Wednesday' || day === 'Thursday' || day === 'Friday' ){
+    console.log('Working Day'); 
+}else if (day === 'Satruday' || day === 'Sunday'){
+    console.log('Weekend');
+}else{
+    console.log('Invalid Day');
+}
+
+// Too probably make it less case sensitive by using .toLowerCase()
