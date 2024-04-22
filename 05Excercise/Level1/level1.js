@@ -113,3 +113,34 @@ if (itCompanies[6].split('o').length - 1 <= 1) {
 
 console.log(filteredCompanies);
 
+
+// QUESTION 15
+console.log(itCompanies.sort());
+
+// QUESTION 16
+console.log(itCompanies.reverse());
+
+// QUESTION 17
+console.log(itCompanies.slice(0,3));
+
+// QUESTION 18
+console.log(itCompanies.slice(4));
+
+// QUESTION 19
+console.log(itCompanies.slice(3,4));
+
+// QUESTION 20
+const remFirst = itCompanies.shift()
+console.log(itCompanies);
+
+// QUESTION 21
+const remMiddle = itCompanies.splice(2,2);
+console.log(itCompanies);
+
+// QUESTION 22
+const remLast = itCompanies.pop();
+console.log(itCompanies);
+
+// QUESTION 23
+const remAll = itCompanies.splice(0,7);
+console.log(itCompanies);
