@@ -1,4 +1,3 @@
-
 const webTechs = [
     'HTML',
     'CSS',
@@ -7,4 +6,6 @@ const webTechs = [
     'Redux',
     'Node',
     'MongoDB'
-]
+];
+
+module.exports = webTechs;
