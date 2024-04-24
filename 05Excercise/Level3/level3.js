@@ -41,9 +41,23 @@ console.log(maxAveAbs);
 // console.log(countries);
 
 // QUESTION 2
-const countrySep = countries.toString();
-const count = countrySep.length;
-// const middleCountry = Math.round(countryLen/2);
-// const getCountry = countries[middleCountry];
-console.log(countrySep);
-console.log(count);
+const countryLen = countries.length - 1;
+const countryMiddle = Math.round(countryLen/2);
+
+console.log(countryMiddle);
+console.log(countries.length);
+console.log(countries[countryMiddle]);
+
+// QUESTION 3
+let countryLenTwo = countries.length
+let divCountries = countryLenTwo % 2;
+
+if(divCountries === 0){
+    let countryLeft = countries.slice(0,countryMiddle);
+    let countryRight = countries.slice(countryMiddle,countryLenTwo);
+    console.log(countryLeft , countryRight);
+}else{
+    let countryLeft = countries.slice(0,countryMiddle + 1);
+    let countryRight = countries.slice(countryMiddle+1);
+    console.log(countryLeft , countryRight);
+}
