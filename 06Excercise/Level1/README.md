@@ -6,7 +6,7 @@
 
 3. Iterate 0 to n using for loop
 
-Write a loop that makes the following pattern using console.log():
+4. Write a loop that makes the following pattern using console.log():
 
     #
     ##
@@ -15,7 +15,8 @@ Write a loop that makes the following pattern using console.log():
     #####
     ######
     #######
-Use loop to print the following pattern:
+
+5. Use loop to print the following pattern:
 
 0 x 0 = 0
 1 x 1 = 1
@@ -28,7 +29,8 @@ Use loop to print the following pattern:
 8 x 8 = 64
 9 x 9 = 81
 10 x 10 = 100
-Using loop print the following pattern
+
+6. Using loop print the following pattern
 
  i    i^2   i^3
  0    0     0
@@ -42,25 +44,28 @@ Using loop print the following pattern
  8    64    512
  9    81    729
  10   100   1000
-Use for loop to iterate from 0 to 100 and print only even numbers
 
-Use for loop to iterate from 0 to 100 and print only odd numbers
+7. Use for loop to iterate from 0 to 100 and print only even numbers
 
-Use for loop to iterate from 0 to 100 and print only prime numbers
+8. Use for loop to iterate from 0 to 100 and print only odd numbers
 
-Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+9. Use for loop to iterate from 0 to 100 and print only prime numbers
 
-The sum of all numbers from 0 to 100 is 5050.
-Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+10. Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+ "The sum of all numbers from 0 to 100 is 5050."
 
-The sum of all evens from 0 to 100 is 2550. And the sum of all odds from 0 to 100 is 2500.
-Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. Print sum of evens and sum of odds as array
+ 
+11.  Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+
+" The sum of all evens from 0 to 100 is 2550. And the sum of all odds from 0 to 100 is 2500."
+
+12. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. Print sum of evens and sum of odds as array
 
   [2550, 2500]
-Develop a small script which generate array of 5 random numbers
+13. Develop a small script which generate array of 5 random numbers
 
-Develop a small script which generate array of 5 random numbers and the numbers must be unique
+14. Develop a small script which generate array of 5 random numbers and the numbers must be unique
 
-Develop a small script which generate a six characters random id:
+15. Develop a small script which generate a six characters random id:
 
 5j2khz
