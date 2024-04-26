@@ -203,14 +203,16 @@ let rows = 10;
 
 // QUESTION 15
 let string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+let empString = ''
 let num = 6;
 
 for(let i = 1; i <= num; i++){
     let randString = string.length-1;
     let generate = Math.floor(Math.random() * randString);
     let word = string.charAt(generate);
-    console.log(word.toLowerCase());
+    empString = generate+empString;
 }
+console.log(empString.toLowerCase());
 
 
 
