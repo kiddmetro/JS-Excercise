@@ -112,16 +112,29 @@ const countries = [
 // console.log(newArr)
 
 // QUESTION 9
-const empString = '';
-for (const country of countries) {
-   let fullCountry = (country.length);
-    let countyChar = country.slice(0,fullCountry);
-    let iterate = countyChar <= fullCountry;
-        console.log(countyChar);
-}
+// const empString = '';
+// for (const country of countries) {
+//    let fullCountry = (country.length);
+//     let countyChar = country.slice(0,fullCountry);
+//     let iterate = countyChar <= fullCountry;
+//         console.log(fullCountry);
+//         // console.log(countyChar);
+// }
 // console.log(empString);
 
 
+// QUESTION 10
+
+const newArr = [];
+for (const country of countries) {
+    let countryLen = country.length;
+    if(countryLen === 5){
+        let append = newArr.push(country);
+    }
+}
+console.log(newArr)
+
+// QUESTION 11
 
 
 
@@ -130,7 +143,4 @@ for (const country of countries) {
 
 
 
-
-
-
-// QUESTION 8 & 9 ARE QUESTIONABLE TRY AND RESOLVE
+// QUESTION 7 8 & 9 10 11 12 13 14 15 16 ARE QUESTIONABLE TRY AND RESOLVE
