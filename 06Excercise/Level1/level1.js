@@ -179,15 +179,41 @@ let rows = 10;
 
 
 //  QUESTION 13
-const empArr =[]
+// const empArr =[]
 
-let num = 5;
+// let num = 5;
 
-for(let i = 1; i <= num;i++ ){
-    let randomNum = Math.floor(Math.random() * num);
-    let pushNum = empArr.push(randomNum);
-}
-console.log(empArr)
+// for(let i = 1; i <= num;i++ ){
+//     let randomNum = Math.floor(Math.random() * num);
+//     let pushNum = empArr.push(randomNum);
+// }
+// console.log(empArr)
 
 
 // QUESTION 14
+// const empArr =[]
+
+// let num = 4;
+
+// for(let i = 0; i <= num ;i++ ){
+//     let randomNum = Math.round(Math.random() * 1000 );
+//     let pushNum = empArr.push(randomNum);
+// }
+// console.log(empArr)
+
+// QUESTION 15
+let string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+let num = 6;
+
+for(let i = 1; i <= num; i++){
+    let randString = string.length-1;
+    let generate = Math.floor(Math.random() * randString);
+    let word = string.charAt(generate);
+    console.log(word.toLowerCase());
+}
+
+
+
+
+
+// QUESTION 10 INCOMPLETE BETTER DONT FORGET 
