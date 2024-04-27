@@ -226,3 +226,5 @@ for (const country of countries) {
     }
 }
 console.log(newArr);
+
+// QUESTION 5
