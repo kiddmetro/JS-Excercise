@@ -182,3 +182,49 @@ console.log(sumArg(1, 2, 3, 4));
 const randomIp = () => Array(4).fill(0).map((_, i) => Math.floor(Math.random() * 255) + (i === 0 ? 1 : 0)).join('.');
 
 console.log(randomIp());
+
+// QUESTION 16
+
+
+
+
+// QUESTION 17
+
+function randomHexaNumberGenerator(){
+    let string = '0123456789ABCDEF';
+    let empString = '';
+    let num =5 ;
+
+
+    for(let i = 0; i <= num; i++){
+        let stringLen = string.length -1;
+        let generate = Math.floor(Math.random() * stringLen);
+        let random = string.charAt(generate);
+        empString = random+empString;
+    }
+    return(`#${empString.toLowerCase()}`);
+}
+console.log(randomHexaNumberGenerator());
+
+
+// QUESTION 18
+
+function userIdGenerator(){
+    let string = '0123456789ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let empString = '';
+    let num =6 ;
+
+
+    for(let i = 0; i <= num; i++){
+        let stringLen = string.length -1;
+        let generate = Math.floor(Math.random() * stringLen);
+        let random = string.charAt(generate);
+        empString = random+empString;
+    }
+    return(`${empString}`);
+}
+console.log(userIdGenerator());
+
+
+
+// QUESTION 1 2 and 16 NOT SOLVED
