@@ -123,15 +123,15 @@ const convertRgbToHexa = (r,g,b) => {
     rgbB? rgbB = rgbB.toString(16) : rgbB = rgbB;
 
     let rgbR1 = r/16;
-    rgbR1 < 16 ? rgbR1 =( (Math.abs(rgbR - rgbR1)) * 16 ).toString(16) : rgbR1 = (r%16).toString(16);
+    r < 16 ? rgbR1 =( (Math.abs(rgbR - rgbR1)) * 16 ).toString(16) : rgbR1 = (r%16).toString(16);
     let rgbG1 = g/16;
-    rgbG1 < 16 ? rgbG1 =( (Math.abs(rgbG - rgbG1)) * 16).toString(16) : rgbG1 = (g%16).toString(16);
+    g < 16 ? rgbG1 =( (Math.abs(rgbG - rgbG1)) * 16).toString(16) : rgbG1 = (g%16).toString(16);
     let rgbB1 = b/16;
-    rgbB1 < 16 ? rgbB1 =(( Math.abs(rgbB - rgbB1)) * 16).toString(16) : rgbB1 = (b%16).toString(16);
+    b < 16 ? rgbB1 =(( Math.abs(rgbB - rgbB1)) * 16).toString(16) : rgbB1 = (b%16).toString(16);
     let rgb = '#'+rgbR+rgbR1+rgbG+rgbG1+rgbB+rgbB1;
-    return rgbR1;
+    return rgb;
 }
 
-console.log(convertRgbToHexa(182,0,35));
+console.log(convertRgbToHexa(163,122,46));
 
 console.log((Math.abs(0 - 0)*16).toString(16));
