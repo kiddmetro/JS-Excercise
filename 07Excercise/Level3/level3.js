@@ -102,7 +102,7 @@ console.log(arrayOfRgbColors());
 
 // QUESTION 5
 
-const hex2rgb = (hex) => {
+const convertHexaToRgb = (hex) => {
     const r = parseInt(hex.slice(1, 3), 16);
     const g = parseInt(hex.slice(3, 5), 16);
     const b = parseInt(hex.slice(5, 7), 16);
@@ -110,5 +110,28 @@ const hex2rgb = (hex) => {
     return { r, g, b };
 }
 
-console.log(hex2rgb("#d96802"));
+console.log(convertHexaToRgb("#50068F"));
 
+// QUESTION 6
+
+const convertRgbToHexa = (r,g,b) => {
+    let rgbR = Math.floor(r/16);
+    rgbR? rgbR = rgbR.toString(16) : rgbR = rgbR;
+    let rgbG = Math.floor(g/16);
+    rgbG? rgbG = rgbG.toString(16) : rgbG = rgbG;
+    let rgbB = Math.floor(b/16);
+    rgbB? rgbB = rgbB.toString(16) : rgbB = rgbB;
+
+    let rgbR1 = r/16;
+    rgbR1 < 16 ? rgbR1 =( (Math.abs(rgbR - rgbR1)) * 16 ).toString(16) : rgbR1 = (r%16).toString(16);
+    let rgbG1 = g/16;
+    rgbG1 < 16 ? rgbG1 =( (Math.abs(rgbG - rgbG1)) * 16).toString(16) : rgbG1 = (g%16).toString(16);
+    let rgbB1 = b/16;
+    rgbB1 < 16 ? rgbB1 =(( Math.abs(rgbB - rgbB1)) * 16).toString(16) : rgbB1 = (b%16).toString(16);
+    let rgb = '#'+rgbR+rgbR1+rgbG+rgbG1+rgbB+rgbB1;
+    return rgbR1;
+}
+
+console.log(convertRgbToHexa(182,0,35));
+
+console.log((Math.abs(0 - 0)*16).toString(16));
