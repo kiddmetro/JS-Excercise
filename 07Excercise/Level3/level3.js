@@ -132,6 +132,45 @@ const convertRgbToHexa = (r,g,b) => {
     return rgb;
 }
 
-console.log(convertRgbToHexa(163,122,46));
+console.log(convertRgbToHexa(199,86,220));
 
-console.log((Math.abs(0 - 0)*16).toString(16));
+
+// QUESTION 7
+
+const generateColors = (color,num) => {
+    if(color === 'hexa'){
+        const hexaString = '0123456789ABCDEF';
+        let newArray = [];
+        for (let j = 0; j < num; j++) {
+            let newString = '';
+    
+            for (let i = 0; i < 6; i++) {
+                const random = Math.floor(Math.random() * hexaString.length);
+                const generateHex = hexaString.charAt(random);
+                newString += generateHex.toLowerCase();
+            }
+    
+            newArray.push('#' + newString);
+        }
+        return newArray
+    }
+    if(color = 'rgb'){
+        let newArray = [];
+        for(let j = 0; j < num; j++){
+            let rgbString = '';
+            for(let i = 0; i <= 0; i++){
+                let red = Math.floor(Math.random() * 255);
+                let blue = Math.floor(Math.random() * 255);
+                let green = Math.floor(Math.random() * 255);
+
+                rgbString = 'rgb' + '('+ red + ',' + blue + ',' + green +')';
+            }
+        newArray.push(rgbString);
+
+        }
+        return newArray;
+    }
+}
+
+console.log(generateColors('hexa', 8));
+
