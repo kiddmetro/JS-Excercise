@@ -26,21 +26,40 @@
 // QUESTION 2
 
 function rgbColorGenerator(){
-    let empString = '';
-    for(let j = 0; j <= 2; j++){
+    // let empString = '';
+    // for(let j = 0; j <= 2; j++){
+    //     let rgbString = '';
+    //     for(let i = 0; i <= 0; i++){
+    //         let random = Math.floor(Math.random() * 255);
+    //         rgbString += random ;
+    //     }
+    //     empString += rgbString; 
+    //     if (j < 2) {
+    //         empString += ',';
+    //     }
+    // }
+    // return `rgb(${empString})`;
+
+    let newArray = [];
+    let random = Math.floor(Math.random() * 255 );
+    for(let j = 0; j < random; j++){
         let rgbString = '';
         for(let i = 0; i <= 0; i++){
-            let random = Math.floor(Math.random() * 255);
-            rgbString += random ;
+            let red = Math.floor(Math.random() * 255);
+            let blue = Math.floor(Math.random() * 255);
+            let green = Math.floor(Math.random() * 255);
+
+            rgbString = 'rgb' + '('+ red + ',' + blue + ',' + green +')';
         }
-        empString += rgbString; 
-        if (j < 2) {
-            empString += ',';
-        }
+    newArray.push(rgbString);
+
     }
-    return `rgb(${empString})`;
+    return newArray;
 }
 console.log(rgbColorGenerator());
+
+
+
 
 
 // QUESTION 3
@@ -174,3 +193,5 @@ const generateColors = (color,num) => {
 
 console.log(generateColors('hexa', 8));
 
+
+// QUESTION 8
