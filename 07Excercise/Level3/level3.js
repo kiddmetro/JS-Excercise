@@ -195,3 +195,49 @@ console.log(generateColors('hexa', 8));
 
 
 // QUESTION 8
+let newArray = [];
+const shuffleArray = (array) =>{
+    for(let i = 0; i <= 0; i++){
+        let random = Math.floor(Math.random() * array.length);
+        let temp = array[i];
+        array[i] = array[random];
+        array[random] = temp;
+    }
+    return array;
+}
+const numbers = [1, 2, 3, 4, 5];
+
+console.log(shuffleArray(numbers));
+
+// QUESTION 9
+function factorial (num){
+    let factorial = 1;
+    for(let i = 1; i <= num; i++){
+        factorial = factorial * i;
+    }
+    return factorial;
+}
+console.log(factorial(10));
+
+// QUESTIION 10
+const isEmpty = (param) => {
+    if(param ===null || param === undefined || param === ''){
+        return true;
+    }else{
+        return param;
+    }
+}
+console.log(isEmpty('Bab'));
+
+// QUESTION 11
+const sum = (...arg) => {
+    let sum = 0;
+    for(let i = 0; i < arg.length;i++){
+        sum += arg[i];
+    }
+    return sum;
+}
+
+console.log(sum(1, 2, 3, 4))
+
+// QUESTION 12
