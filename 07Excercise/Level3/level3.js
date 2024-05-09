@@ -205,7 +205,7 @@ const shuffleArray = (array) =>{
     }
     return array;
 }
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 'A', 3, 4, 5];
 
 console.log(shuffleArray(numbers));
 
@@ -241,3 +241,30 @@ const sum = (...arg) => {
 console.log(sum(1, 2, 3, 4))
 
 // QUESTION 12
+const sumOfArrayItems = (array) => {
+    let sum = 0;
+    let typeOfArray = array.every(item => typeof item === 'number')
+    if(typeOfArray === true ){
+        for(let j = 0; j <= array.length - 1;j++){
+            sum += array[j]
+        }
+        return sum;
+    }
+    else{
+        console.log("All the items in the array are not Numbers")
+    }  
+}
+
+console.log(sumOfArrayItems(numbers));
+
+// QUESTION 13
+const average = (array) => {
+    let sum = 0;
+    let typeOfArray = array.every(item => typeof item === 'number');
+    if(typeOfArray === true){
+        
+    }
+}
+
+
+
