@@ -280,9 +280,12 @@ console.log(average(numb));
 
 // QUESTION 14 
 const modifyArray = (...array) => {
-    if(array.length < 5){
-        let newArray = []
-        for
+    let newArray = []
+    if(array.length >= 5){
+        let fifth = array[4];
+        fifth.toLowerCase();
+        
+
     }
 
 }
