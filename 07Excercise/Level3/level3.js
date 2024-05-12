@@ -284,8 +284,17 @@ const modifyArray = (...array) => {
     if(array.length >= 5){
         let fifth = array[4];
         fifth.toLowerCase();
-        
-
     }
 
 }
+
+// QUESTION 15
+
+
+
+
+
+
+
+
+// QUESTION 14 TO 20 INCOMPLETE 
