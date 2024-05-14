@@ -79,3 +79,27 @@ for (const user in users) {
 console.log("Number of logged in users:", loggedInCount);
 console.log("Number of users with 50 or more points:", pointsGreaterThanOrEqualTo50Count);
 
+// QUESTION 3
+ const mernStack = ["MongoDB", "Express","React", "Node"];
+
+ const mernDeveloper = [];
+
+ for (const user in users) {
+   let getSkills = users[user].skills;
+   let mernTech = mernStack.every(item => getSkills.includes(item));
+   if(mernTech){
+    mernDeveloper.push(user);
+   }
+ }
+
+ console.log(mernDeveloper);
+
+//  QUESTION 4
+ const newUser = Object.assign({ }, users);
+ newUser.Clinton ={
+  email: 'clinton@clintom.com',
+  skills: ['Html']
+}
+ console.log(newUser);
+
+//  QUESTION 5
