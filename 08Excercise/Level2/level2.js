@@ -1,3 +1,4 @@
+
 const users = {
     Alex: {
       email: 'alex@alex.com',
@@ -103,3 +104,46 @@ console.log("Number of users with 50 or more points:", pointsGreaterThanOrEqualT
  console.log(newUser);
 
 //  QUESTION 5
+const userKeys = Object.keys(users);
+console.log(userKeys);
+
+// QUESTION 6
+const userValues = Object.values(users);
+console.log(userValues);
+
+// QUESTION 7
+const countries = {
+  Afghanistan: {
+    capital: 'Kabul',
+    population: 38928341,
+    languages: ['Pashto', 'Dari']
+  },
+  Albania: {
+    capital: 'Tirana',
+    population: 2877797,
+    languages: ['Albanian']
+  },
+  Algeria: {
+    capital: 'Algiers',
+    population: 43851044,
+    languages: ['Arabic']
+  },
+  Andorra: {
+    capital: 'Andorra la Vella',
+    population: 77265,
+    languages: ['Catalan']
+  },
+  Angola: {
+    capital: 'Luanda',
+    population: 32866272,
+    languages: ['Portuguese']
+  }
+};
+for (const country in countries) {
+  console.log(`Country: ${country}`);
+  console.log(`Capital: ${countries[country].capital}`);
+  console.log(`Population: ${countries[country].population.toString()}`);
+  console.log(`Languages: ${countries[country].languages}`);
+  console.log('-----------------------------------');
+}
+
