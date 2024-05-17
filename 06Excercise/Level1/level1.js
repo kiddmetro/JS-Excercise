@@ -210,10 +210,9 @@ for(let i = 1; i <= num; i++){
     let randString = string.length-1;
     let generate = Math.floor(Math.random() * randString);
     let word = string.charAt(generate);
-    empString = generate+empString;
+    empString += word;
 }
 console.log(empString.toLowerCase());
-
 
 
 

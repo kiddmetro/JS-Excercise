@@ -111,7 +111,81 @@ const users = [
   }
 ]
 
+// QUESTION 2
+
+let id;
+let userName = prompt("Enter Username");
+let email = prompt("Enter Email");
+let password = prompt("Enter Password");
+let loggedIn;
 
 
+function signUp(){
+    id = '';
+    let string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 
+    for(let i = 0; i <= 5;i++){
+        let random = Math.floor(Math.random() * string.length -1);
+        let generateID = string.charAt(random).toLowerCase();
+        id += generateID;
+    }
+
+    let month = new Date().getMonth();
+    if(month < 10){
+        ctrlMonth = '0'+ month;
+    }
+    else{
+        ctrlMonth = month;
+    }
+    let date = new Date().getDate();
+    if(date < 10){
+        ctrlDate = '0'+ date;
+    }
+    else{
+        ctrlDate = date;
+    }
+    let year = new Date().getFullYear();
+    let hours = new Date().getHours();
+    if(hours < 10){
+        ctrlHours = '0'+ hours;
+    }
+    else{
+        ctrlHours = hours;
+    }
+    let minutes = new Date().getMinutes();
+    if(minutes < 10){
+        ctrlMinutes = '0'+ minutes;
+    }
+    else{
+        ctrlMinutes = minutes;
+    }
+    let timeOfTime = '';
+    if(hours >= 12){
+        timeOfTime = 'PM'
+    }
+    else{
+        timeOfTime = 'AM'
+    }
+    let showDate = `${ctrlMonth}/${ctrlDate}/${year} ${ctrlHours}:${ctrlMinutes} ${timeOfTime} `;
+
+    users.push( {
+        _id: id,
+        username: userName,
+        email: email,
+        password: password,
+        createdAt: showDate
+      })
+    return users;
+
+}
+
+console.log(signUp());
+
+
+// _id: 'ghderc',
+// username: 'Thomas',
+// email: 'thomas@thomas.com',
+// password: '123333',
+// createdAt:'08/01/2020 10:00 AM',
+// isLoggedIn: false
 
