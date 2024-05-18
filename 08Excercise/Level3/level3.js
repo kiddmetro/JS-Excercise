@@ -130,6 +130,8 @@ function signUp(){
         id += generateID;
     }
 
+
+    
     let month = new Date().getMonth();
     if(month < 10){
         ctrlMonth = '0'+ month;
@@ -168,15 +170,29 @@ function signUp(){
     }
     let showDate = `${ctrlMonth}/${ctrlDate}/${year} ${ctrlHours}:${ctrlMinutes} ${timeOfTime} `;
 
-    users.push( {
-        _id: id,
-        username: userName,
-        email: email,
-        password: password,
-        createdAt: showDate
-      })
-    return users;
 
+
+    for (const user in users) {
+        let checkUser = users[user].username;
+       if(userName === checkUser){
+        return 'You Already have an account with same user name';
+       }
+       else{
+        users.push( {
+            _id: id,
+            username: userName,
+            email: email,
+            password: password,
+            createdAt: showDate,
+            isLoggedIn: false
+          });
+         return users;
+
+       }
+
+    }
+  
+    
 }
 
 console.log(signUp());
