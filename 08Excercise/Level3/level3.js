@@ -113,7 +113,7 @@ const users = [
 
 // QUESTION 2
 
-let id;
+/*let id;
 let userName = prompt("Enter Username");
 let email = prompt("Enter Email");
 let password = prompt("Enter Password");
@@ -187,6 +187,35 @@ function signUp(){
             isLoggedIn: false
           });
          return users;
+
+       }
+
+    }
+  
+    
+}
+
+console.log(signUp()); */
+
+// QUESTION 3
+let userName = prompt("Enter Username");
+let password = prompt("Enter Password");
+let loggedIn;
+
+
+function signIn(){  
+    for (const user in users) {
+        let checkUser = users[user].username;
+        let checkPassword = users[user].password
+       if(userName === checkUser && password === checkPassword ){
+        let checkLoggedIn = users[user].isLoggedIn;
+            if(checkLoggedIn === false){
+                checkLoggedIn = true;
+            }
+        return users;
+       }
+       else{
+        return 'Wrong Username or Password';
 
        }
 
