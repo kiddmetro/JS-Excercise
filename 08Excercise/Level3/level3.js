@@ -200,24 +200,25 @@ console.log(signUp()); */
 // QUESTION 3
 let userName = prompt("Enter Username");
 let password = prompt("Enter Password");
-let loggedIn;
 
 
 function signIn(){  
-    for (const user in users) {
-        let checkUser = users[user].username;
-        let checkPassword = users[user].password;
-       if(userName === checkUser && password === checkPassword ){
-        return users.includes(userName);
-       }
-       else{
-        // return 'Wrong Username or Password';
-       }
+    for (const user of users) {
+        if (userName === user.username && password === user.password) {
+            user.isLoggedIn = true;
+            console.log("Login successful!");
+            console.log(user);  
+            return user;
+        }
     }
+    
+    console.log("Wrong Username or Password");
+    return null;
 }
 
-console.log(signIn());
-
+const loggedInUser = signIn();
+const loggedIn = loggedInUser !== null;
+console.log(`Logged in status: ${loggedIn}`);
 
 // _id: 'ghderc',
 // username: 'Thomas',
