@@ -206,25 +206,17 @@ let loggedIn;
 function signIn(){  
     for (const user in users) {
         let checkUser = users[user].username;
-        let checkPassword = users[user].password
+        let checkPassword = users[user].password;
        if(userName === checkUser && password === checkPassword ){
-        let checkLoggedIn = users[user].isLoggedIn;
-            if(checkLoggedIn === false){
-                checkLoggedIn = true;
-            }
-        return users;
+        return users.includes(userName);
        }
        else{
-        return 'Wrong Username or Password';
-
+        // return 'Wrong Username or Password';
        }
-
     }
-  
-    
 }
 
-console.log(signUp());
+console.log(signIn());
 
 
 // _id: 'ghderc',
