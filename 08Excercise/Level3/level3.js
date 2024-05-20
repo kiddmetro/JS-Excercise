@@ -197,7 +197,7 @@ function signUp(){
 
 console.log(signUp()); */
 
-// QUESTION 3
+// QUESTION 2B
 let userName = prompt("Enter Username");
 let password = prompt("Enter Password");
 
@@ -220,10 +220,77 @@ const loggedInUser = signIn();
 const loggedIn = loggedInUser !== null;
 console.log(`Logged in status: ${loggedIn}`);
 
-// _id: 'ghderc',
-// username: 'Thomas',
-// email: 'thomas@thomas.com',
-// password: '123333',
-// createdAt:'08/01/2020 10:00 AM',
-// isLoggedIn: false
 
+
+// QUESTION 3
+
+
+// Function to rate a product
+function rateProduct(productId, userId, rating) {
+    if (rating < 1 || rating > 5) {
+      console.log('Rating must be between 1 and 5');
+      return;
+    }
+  
+    const product = products.find(p => p._id === productId);
+  
+    if (product) {
+      // Check if the user has already rated the product
+      const userRating = product.ratings.find(r => r.userId === userId);
+  
+      if (userRating) {
+        userRating.rate = rating; // Update the existing rating
+        console.log(`Updated rating for ${product.name} by user ${userId} to ${rating} stars`);
+      } else {
+        product.ratings.push({ userId, rate: rating }); // Add a new rating
+        console.log(`Rated ${product.name} with ${rating} stars by user ${userId}`);
+      }
+      console.log(product);
+    } else {
+      console.log('Product not found');
+    }
+  }
+  
+  // Function to calculate the average rating of a product
+  function averageRating(productId) {
+    const product = products.find(p => p._id === productId);
+  
+    if (product) {
+      const totalRatings = product.ratings.length;
+  
+      if (totalRatings === 0) {
+        return 0; // No ratings yet
+      }
+  
+      const sumRatings = product.ratings.reduce((sum, rating) => sum + rating.rate, 0);
+      const average = sumRatings / totalRatings;
+  
+      return average;
+    } else {
+      console.log('Product not found');
+      return null;
+    }
+  }
+  
+  // Example usage:
+  rateProduct('eedfcf', 'fg12cy', 4);
+  rateProduct('aegfal', 'zwf8md', 4.5); 
+  rateProduct('hedfcg', 'zwf8md', 3); 
+  
+  console.log('Average rating for mobile phone:', averageRating('eedfcf')); 
+  console.log('Average rating for Laptop:', averageRating('aegfal')); 
+  console.log('Average rating for TV:', averageRating('hedfcg')); 
+
+
+// const products = [
+//     {
+//       _id: 'eedfcf',
+//       name: 'mobile phone',
+//       description: 'Huawei Honor',
+//       price: 200,
+//       ratings: [
+//         { userId: 'fg12cy', rate: 5 },
+//         { userId: 'zwf8md', rate: 4.5 }
+//       ],
+//       likes: []
+//     },
