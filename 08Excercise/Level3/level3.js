@@ -282,6 +282,10 @@ function rateProduct(productId, userId, rating) {
   console.log('Average rating for TV:', averageRating('hedfcg')); 
 
 
+//   QUESTION 4
+
+
+
 // const products = [
 //     {
 //       _id: 'eedfcf',
