@@ -1,4 +1,12 @@
-function sayHello() {
-    console.log('Hello')
-  }
-  setInterval(sayHello, 1000) // it prints hello in every second, 1000ms is 1s
+const users = [
+    { name: 'Asabeneh', age: 150 },
+    { name: 'Brook', age: 50 },
+    { name: 'Eyob', age: 100 },
+    { name: 'Elias', age: 22 },
+  ]
+  users.sort((a, b) => {
+    if (a.age < b.age) return -1
+    if (a.age > b.age) return 1
+    return 0
+  })
+  console.log(users);
