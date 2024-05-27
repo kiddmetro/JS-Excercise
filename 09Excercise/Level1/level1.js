@@ -6,7 +6,7 @@
 // QUESTION 2
 function callback(){
 
-    function callback2({
-        
-    })
+    function callback2(){
+        return "hekko"
+    }
 }
