@@ -7,6 +7,6 @@
 function callback(){
 
     function callback2(){
-        return "hekko"
+        console.log('Hello world')
     }
 }
