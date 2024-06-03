@@ -5,8 +5,15 @@
 
 // QUESTION 2
 function callback(){
+    array.forEach(element => {
+        console.log(callback) 
+    });
 
-    function callback2(){
-        console.log('Hello world')
-    }
+    array.map(element => {
+        console.log(callback)
+    });
+
+    array.filter(element => {
+        console.log(callback)
+    });
 }
