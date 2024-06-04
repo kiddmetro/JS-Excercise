@@ -16,4 +16,8 @@ function callback(){
     array.filter(element => {
         console.log(callback)
     });
+
+    array.reduce(element => {
+        console.log(callback)
+    });
 }
