@@ -3,21 +3,25 @@
 
 // FOREACH - iterates through 
 
+
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const products = [
+  { product: 'banana', price: 3 },
+  { product: 'mango', price: 6 },
+  { product: 'potato', price: ' ' },
+  { product: 'avocado', price: 8 },
+  { product: 'coffee', price: 10 },
+  { product: 'tea', price: '' },
+]
 // QUESTION 2
-function callback(){
-    array.forEach(element => {
-        console.log(callback) 
-    });
-
-    array.map(element => {
-        console.log(callback)
-    });
-
-    array.filter(element => {
-        console.log(callback)
-    });
-
-    array.reduce(element => {
-        console.log(callback)
-    });
+function callback(element){
+    return element;
 }
+element.foreach(callback);
+element.map(callback);
+element.filter(callback);
+element.reduce(callback);
+
+// QUESTION 3
