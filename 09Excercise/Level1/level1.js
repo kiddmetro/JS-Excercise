@@ -60,4 +60,21 @@ console.log(landFilter);
 
 // QUESTION 12
 const sixFIlter = countries.filter(element => element.length === 6 )
-console.log(sixFIlter)
+console.log(sixFIlter);
+
+// QUESTION 13
+const moreLetterFilter = countries.filter(element => element.length >= 6 )
+console.log(moreLetterFilter);
+
+// QUESTION 14
+const letterStart = countries.filter(element => element.startsWith('E'));
+console.log(letterStart);
+
+// QUESTION 15
+const filterPrice = products.filter(element =>  typeof element.price === 'number');
+console.log(filterPrice);
+
+// QUESTION 16
+const getStringLists = arr => {
+    
+}
