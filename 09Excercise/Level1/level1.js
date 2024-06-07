@@ -76,5 +76,15 @@ console.log(filterPrice);
 
 // QUESTION 16
 const getStringLists = arr => {
-    
+    const filterArr = arr.filter(element => typeof element === "string")
+    return filterArr;
 }
+console.log(getStringLists(names));
+
+// QUESTION 17
+const sums = numbers.reduce((acc, cur) => acc + cur, 0)
+console.log(sums)
+
+// QUESTION 18
+const reduceConCat = countries.reduce((acc, cur) => acc + cur + ", ","");
+console.log(reduceConCat)
