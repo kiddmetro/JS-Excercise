@@ -90,7 +90,7 @@ const concatenatedCountries = countries.reduce((accumulator, currentValue, index
     if (index === 0) {
       return currentValue;
     } else if (index === countries.length - 1) {
-      return accumulator + ', and ' + currentValue;
+      return accumulator + ', and ' + currentValue + ' are North European countries';
     } else {
       return accumulator + ', ' + currentValue;
     }
