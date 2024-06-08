@@ -86,5 +86,14 @@ const sums = numbers.reduce((acc, cur) => acc + cur, 0)
 console.log(sums)
 
 // QUESTION 18
-const reduceConCat = countries.reduce((acc, cur) => acc + cur + ", ","");
-console.log(reduceConCat)
+const concatenatedCountries = countries.reduce((accumulator, currentValue, index) => {
+    if (index === 0) {
+      return currentValue;
+    } else if (index === countries.length - 1) {
+      return accumulator + ', and ' + currentValue;
+    } else {
+      return accumulator + ', ' + currentValue;
+    }
+  }, '');
+console.log(concatenatedCountries)
+  
