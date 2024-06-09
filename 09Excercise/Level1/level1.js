@@ -95,5 +95,14 @@ const concatenatedCountries = countries.reduce((accumulator, currentValue, index
       return accumulator + ', ' + currentValue;
     }
   }, '');
-console.log(concatenatedCountries)
-  
+console.log(concatenatedCountries);
+
+// QUESTION 19
+
+
+// QUESTION 20
+const someNames = names.some(element => element.length > 7);
+console.log(someNames);
+
+const everyCountries = countries.every(element => element.includes('land') );
+console.log(everyCountries);
