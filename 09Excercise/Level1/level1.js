@@ -104,5 +104,9 @@ console.log(concatenatedCountries);
 const someNames = names.some(element => element.length > 7);
 console.log(someNames);
 
+
+// QUESTION 21
 const everyCountries = countries.every(element => element.includes('land') );
 console.log(everyCountries);
+
+// QUESTION 22
