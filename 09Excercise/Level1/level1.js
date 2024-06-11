@@ -110,3 +110,20 @@ const everyCountries = countries.every(element => element.includes('land') );
 console.log(everyCountries);
 
 // QUESTION 22
+
+
+// QUESTION 23
+const findSix = countries.find((name) => name.length == 6)
+console.log(findSix);
+
+// QUESTION 24
+const findIndex = countries.findIndex((name) => name.length == 6);
+console.log(findIndex);
+
+// QUESTION 25
+const findNorway = countries.findIndex((name) => name == 'Norway');
+console.log(findNorway);
+
+// QUESTION 26
+const findRussia = countries.findIndex((name) => name == "Russia");
+console.log(findRussia);
