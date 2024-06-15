@@ -14,7 +14,7 @@ const products = [
   { product: 'avocado', price: 8 },
   { product: 'coffee', price: 10 },
   { product: 'tea', price: '' },
-]
+];
 
 // QUESTION 2
 // function callback(element){
