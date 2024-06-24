@@ -17,4 +17,19 @@ const sumPrice = products.reduce((accumulator, product) => {
 }, 0);
 console.log(sumPrice);
 
+
+
+const countries = require("./countries_data");
+
 // QUESTION 3
+
+const categorizeCountries = (arr) => {
+
+  return countries.filter(country => country.name.toLowerCase().includes(arr.toLowerCase()));
+}
+
+// Example usage
+// console.log(categorizeCountries('land'));
+console.log(categorizeCountries('ia'));   
+// console.log(categorizeCountries('island')); 
+// console.log(categorizeCountries('stan')); 
