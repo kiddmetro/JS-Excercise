@@ -8,14 +8,14 @@ const products = [
   ];
 
 //   QUESTIION 1
-const totalPrice = products.filter(product => typeof product.price === 'number' && product.price > 0).reduce((sum, product) => sum + product.price, 0);
-console.log(totalPrice);
+// const totalPrice = products.filter(product => typeof product.price === 'number' && product.price > 0).reduce((sum, product) => sum + product.price, 0);
+// console.log(totalPrice);
 
-// QUESTION 2
-const sumPrice = products.reduce((accumulator, product) => {
-  return accumulator + Number(product.price);
-}, 0);
-console.log(sumPrice);
+// // QUESTION 2
+// const sumPrice = products.reduce((accumulator, product) => {
+//   return accumulator + Number(product.price);
+// }, 0);
+// console.log(sumPrice);
 
 
 
@@ -23,13 +23,27 @@ const countries = require("./countries_data");
 
 // QUESTION 3
 
-const categorizeCountries = (arr) => {
+// const categorizeCountries = (arr) => {
 
-  return countries.filter(country => country.name.toLowerCase().includes(arr.toLowerCase()));
-}
+//   return countries.filter(country => country.name.toLowerCase().includes(arr.toLowerCase()));
+// }
 
-// Example usage
-// console.log(categorizeCountries('land'));
-console.log(categorizeCountries('ia'));   
+// // Example usage
+// // console.log(categorizeCountries('land'));
+// console.log(categorizeCountries('ia'));   
 // console.log(categorizeCountries('island')); 
 // console.log(categorizeCountries('stan')); 
+
+// QUESTION 4
+
+const firstLetterCountry = (letter) =>{
+  let letterUc = letter.toUpperCase();
+  let list =  countries.filter(country => country.name.toUpperCase().startsWith(letterUc));
+  let number = list.length;
+  console.log(number)
+  return list;
+
+}
+console.log(firstLetterCountry('a'));
+
+
