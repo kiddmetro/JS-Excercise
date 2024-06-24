@@ -9,5 +9,12 @@ const products = [
 
 //   QUESTIION 1
 const totalPrice = products.filter(product => typeof product.price === 'number' && product.price > 0).reduce((sum, product) => sum + product.price, 0);
-
 console.log(totalPrice);
+
+// QUESTION 2
+const sumPrice = products.reduce((accumulator, product) => {
+  return accumulator + Number(product.price);
+}, 0);
+console.log(sumPrice);
+
+// QUESTION 3
