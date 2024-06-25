@@ -23,9 +23,9 @@ const countries = require("./countries_data");
 
 // QUESTION 3
 
-// const categorizeCountries = (arr) => {
+// const categorizeCountries = (pattern) => {
 
-//   return countries.filter(country => country.name.toLowerCase().includes(arr.toLowerCase()));
+//   return countries.filter(country => country.name.toLowerCase().includes(pattern.toLowerCase()));
 // }
 
 // // Example usage
@@ -36,14 +36,20 @@ const countries = require("./countries_data");
 
 // QUESTION 4
 
-const firstLetterCountry = (letter) =>{
-  let letterUc = letter.toUpperCase();
-  let list =  countries.filter(country => country.name.toUpperCase().startsWith(letterUc));
-  let number = list.length;
-  console.log(number)
-  return list;
+// const firstLetterCountry = (letter) =>{
+//   let letterUc = letter.toUpperCase();
+//   let list =  countries.filter(country => country.name.toUpperCase().startsWith(letterUc));
+//   let number = list.length;
+//   console.log(number)
+//   return list;
 
+// }
+// console.log(firstLetterCountry('a'));
+
+// QUESTION 5
+const getFirstTenCountries = () =>{
+  return countries.slice(0, 10);
 }
-console.log(firstLetterCountry('a'));
 
+console.log(getFirstTenCountries());
 
