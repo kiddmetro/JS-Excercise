@@ -53,3 +53,13 @@ const getFirstTenCountries = () =>{
 
 console.log(getFirstTenCountries());
 
+
+// QUESTION 6
+const getLastTenCountries = () =>{
+  return countries.slice(-10);
+}
+
+console.log(getLastTenCountries());
+
+// QUESTION 7
+
