@@ -47,19 +47,33 @@ const countries = require("./countries_data");
 // console.log(firstLetterCountry('a'));
 
 // QUESTION 5
-const getFirstTenCountries = () =>{
-  return countries.slice(0, 10);
-}
+// const getFirstTenCountries = () =>{
+//   return countries.slice(0, 10);
+// }
 
-console.log(getFirstTenCountries());
+// console.log(getFirstTenCountries());
 
 
-// QUESTION 6
-const getLastTenCountries = () =>{
-  return countries.slice(-10);
-}
+// // QUESTION 6
+// const getLastTenCountries = () =>{
+//   return countries.slice(-10);
+// }
 
-console.log(getLastTenCountries());
+// console.log(getLastTenCountries());
 
 // QUESTION 7
+const getStartingLetter = arr => {
+  const occurences = arr
+    .reduce((acc, {name}) => {
+      const startingLetter = name[0];
+      acc[startingLetter] = (acc[startingLetter] || 0 ) + 1;
+      return acc;
+    }, {});
 
+    return Object
+      .keys(occurences)
+      .sort()
+      .map(letter => ({letter, count: occurences[letter]}));
+}
+
+console.log(getStartingLetter(countries));
