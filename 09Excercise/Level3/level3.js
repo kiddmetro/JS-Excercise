@@ -27,19 +27,22 @@ const countries = require('../Level2/countries_data');
 // console.log(sortedCapital);
 
 // QUESTION 2
-const mostSpokenLanguage = (arr, number) => {
-  const mostLanguage = arr.reduce((acc, {languages}) => {
-    const language = languages[0];
-    acc[language] = (acc[language] || 0) + 1;
-    return acc;
-  }, {});
+// const mostSpokenLanguage = (arr, number) => {
+//   const mostLanguage = arr.reduce((acc, {languages}) => {
+//     const language = languages[0];
+//     acc[language] = (acc[language] || 0) + 1;
+//     return acc;
+//   }, {});
 
-  const sortedLanguages = Object.keys(mostLanguage)
-    .sort((a, b) => mostLanguage[b] - mostLanguage[a])
-    .map(key => ({language: key, count: mostLanguage[key]}));
+//   const sortedLanguages = Object.keys(mostLanguage)
+//     .sort((a, b) => mostLanguage[b] - mostLanguage[a])
+//     .map(key => ({language: key, count: mostLanguage[key]}));
 
-  return sortedLanguages.slice(0, number);
-}
+//   return sortedLanguages.slice(0, number);
+// }
 
-console.log(mostSpokenLanguage(countries, 10));
+// console.log(mostSpokenLanguage(countries, 10));
+
+
+// QUESTION 3
 
