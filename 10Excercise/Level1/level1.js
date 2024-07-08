@@ -1,6 +1,6 @@
 const a = [4, 5, 8, 9];
 const b = [3, 4, 5, 7];
-const countries = ['Finland', 'Sweden', 'Norway'];
+// const countries = ['Finland', 'Sweden', 'Norway'];
 
 // QUESTION 1
 const empty = new Set();
@@ -21,3 +21,18 @@ console.log(set);
 set.clear();
 console.log(set);
 
+// QUESTION 5
+// const countriesSet = new Set(countries);
+// countriesSet.add('Denmark');
+// countriesSet.add('Japan');
+// console.log(countriesSet);
+
+// QUESTION 6
+
+countries = [
+    ['Finland',7 ],
+    ['Sweden', 6],
+    ['Norway', 7],
+  ]
+const conutriesMap = new Map(countries);
+console.log(conutriesMap);
