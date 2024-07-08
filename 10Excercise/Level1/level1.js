@@ -12,3 +12,12 @@ for (let i = 0; i <= 10; i++) {
     set.add(i);
 }
 console.log(set);
+
+// QUESTION 3
+console.log(set.delete(10));
+console.log(set);
+
+// QUESTION 4
+set.clear();
+console.log(set);
+
