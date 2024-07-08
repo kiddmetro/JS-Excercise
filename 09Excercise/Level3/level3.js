@@ -46,3 +46,22 @@ const countries = require('../Level2/countries_data');
 
 // QUESTION 3
 
+const mostPopulatedCountries = (arr,number) =>{
+  const mostPopulated = arr.
+  reduce((acc,{name,population}) =>{
+    acc[name] = population;
+    return acc;
+  },{});
+
+  const sortedPopulations = Object
+  .keys(mostPopulated)
+  .sort((a,b) => mostPopulated[b] - mostPopulated[a])
+  .map(populated => ({population: populated, count:mostPopulated[populated]}));
+
+  return sortedPopulations.slice(0,number);
+}
+
+console.log(mostPopulatedCountries(countries,10));
+
+// QUESTION 4
+
