@@ -100,12 +100,28 @@ const statistics = {
     const max = Math.max(...Object.values(count));
     return Object.keys(count).find(key => count[key] === max);
   },
-    var: function(){
-    const mean = this.mean();
-    const diffSq = ages.map(age => Math.pow(age - mean, 2));
-    const sum = diffSq.reduce((acc,age) => acc + age, 0);
-    return sum / this.count();
+  var: function(){
+  const mean = this.mean();
+  const diffSq = ages.map(age => Math.pow(age - mean, 2));
+  const sum = diffSq.reduce((acc,age) => acc + age, 0);
+  return sum / this.count();
+  },
+  std: function(){
+    const std = Math.sqrt(this.var());
+    return std.toFixed(1);
+  },
+
+  freqDist: function(){
+    const freqDist = {};
+    ages.forEach(age => {
+      freqDist[age] = freqDist[age] + 1 || 1;
+    });
+    const freqArray = Object.keys(freqDist).map(age => [freqDist[age], parseInt(age)]);
+    freqArray.sort((a, b) => b[0] - a[0]);
+    
+    return freqArray;
   }
+
 }
 
 console.log('Count:', statistics.count());
@@ -118,6 +134,5 @@ console.log('Median: ',statistics.median()); // 29
 console.log('Mode: ', statistics.mode()); // {'mode': 26, 'count': 5}
 console.log('Variance: ',statistics.var()); // 17.5
 console.log('Standard Deviation: ', statistics.std()); // 4.2
-console.log('Variance: ',statistics.var()); // 17.5
 console.log('Frequency Distribution: ',statistics.freqDist());
 
