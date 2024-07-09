@@ -4,14 +4,30 @@ const countries = ['Finland', 'Sweden', 'Norway'];
 
 
 // QUESTION 1
+// const A = new Set(a);
+// const B = new Set(b);
 
+// const c = [...A,...B];
+// const C = new Set(c);
+
+// console.log(C)
 
 
 // QUESTION 2
+// const A = new Set(a);
+// const B = new Set(b);
+
+// const c = [...A].filter(x => B.has(x));
+// const C = new Set(c);
+
+// console.log(C)
+
+// QUESTION 3
+
 const A = new Set(a);
 const B = new Set(b);
 
-const c = [...A].filter(x => B.has(x));
+const c = [...A].filter(x => !B.has(x));
 const C = new Set(c);
 
-console.log(C)
+console.log(C);
