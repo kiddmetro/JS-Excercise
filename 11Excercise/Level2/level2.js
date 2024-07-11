@@ -42,3 +42,24 @@
         age:20
     }
 ]
+
+// QUESTION 1
+
+// for (const user of users) {
+//     // const getKeys = Object.keys(user);
+//     // console.log(getKeys);
+
+//     const [key1, key2, key3, key4] = Object.keys(user);
+//     console.log(key1,key2, key3, key4)
+// };
+
+
+// QUESTION 2
+
+for (const user of users) {
+    const {skills} = user;
+    if(skills.length < 2){
+        user == true;
+        console.log(user)
+    }
+}
