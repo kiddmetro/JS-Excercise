@@ -25,5 +25,12 @@ let distance = sortedPoints[sortedPoints.length - 1] - sortedPoints[0];
 console.log("Sorted Points: ", sortedPoints);
 console.log("Distance: ", distance);
 
+// QUESTION 3
 
+function is_valid_variable (variable) {
+  let pattern = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
+  return pattern.test(variable);
+}
+
+console.log(is_valid_variable('first_name'))
 
