@@ -15,10 +15,8 @@ const tenMostFrequentWords = (paragraph) => {
             wordCount[word] = 1;
         }
     });
-
-    console.log(wordCount);
     const sortedWordCount = Object.entries(wordCount).sort((a, b) => b[1] - a[1]);
-    console.log(sortedWordCount.slice(0, 10));
+    return sortedWordCount.slice(0, 10).map(([word, count]) => ({ word, count }));
 }
 
-console.log(tenMostFrequentWords(paragraph))
+console.log(tenMostFrequentWords(paragraph));
