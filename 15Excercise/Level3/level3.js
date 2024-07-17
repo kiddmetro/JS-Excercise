@@ -1,5 +1,8 @@
-ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+// QUESTION 1
 
+const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26];
+
+// Statistics class
 class Statistics {
     constructor(ages) {
         this.ages = ages;
@@ -73,14 +76,66 @@ class Statistics {
 
 const statistics = new Statistics(ages);
 
-console.log('Count:', statistics.count()) // 25
-console.log('Sum: ', statistics.sum()) // 744
-console.log('Min: ', statistics.min()) // 24
-console.log('Max: ', statistics.max()) // 38
-console.log('Range: ', statistics.range()) // 14
-console.log('Mean: ', statistics.mean()) // 30
-console.log('Median: ',statistics.median()) // 29
-console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
-console.log('Variance: ',statistics.var()) // 17.5
-console.log('Standard Deviation: ', statistics.std()) // 4.2
-console.log('Frequency Distribution: ',statistics.frequencyDistribution()) // [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
+console.log('Count:', statistics.count()); // 25
+console.log('Sum:', statistics.sum()); // 744
+console.log('Min:', statistics.min()); // 24
+console.log('Max:', statistics.max()); // 38
+console.log('Range:', statistics.range()); // 14
+console.log('Mean:', statistics.mean()); // 30
+console.log('Median:', statistics.median()); // 27
+console.log('Mode:', statistics.mode()); // { mode: 26, count: 5 }
+console.log('Variance:', statistics.var()); // 17.5
+console.log('Standard Deviation:', statistics.std()); // 4.2
+console.log('Frequency Distribution:', statistics.frequencyDistribution());
+
+// QUESTION 2
+
+class PersonAccount {
+    constructor(firstname, lastname, incomes, expenses) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.incomes = incomes;
+        this.expenses = expenses;
+    }
+
+    totalIncome() {
+        return this.incomes.reduce((acc, curr) => acc + curr.amount, 0);
+    }
+
+    totalExpenses() {
+        return this.expenses.reduce((acc, curr) => acc + curr.amount, 0);
+    }
+
+    accountInfo() {
+        return {
+            firstname: this.firstname,
+            lastname: this.lastname,
+            incomes: this.incomes,
+            expenses: this.expenses,
+            totalIncome: this.totalIncome(),
+            totalExpenses: this.totalExpenses(),
+            netIncome: this.totalIncome() - this.totalExpenses()
+        };
+    }
+
+    addIncome(amount, description) {
+        this.incomes.push({ amount, description });
+    }
+
+    addExpense(amount, description) {
+        this.expenses.push({ amount, description });
+    }
+
+    accountBalance() {
+        return this.totalIncome() - this.totalExpenses();
+    }
+}
+
+const person = new PersonAccount(
+    'John',
+    'Doe',
+    [{ amount: 100, description: 'Freelance work' }, { amount: 200, description: 'Salary' }, { amount: 300, description: 'Investment' }],
+    [{ amount: 20, description: 'Groceries' }, { amount: 40, description: 'Transport' }, { amount: 60, description: 'Entertainment' }]
+);
+
+console.log(person.accountInfo());
