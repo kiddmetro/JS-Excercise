@@ -48,3 +48,5 @@ const getLargestCountries = async () => {
 }
 
 getLargestCountries();
+
+// QUESTION 2
