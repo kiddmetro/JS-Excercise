@@ -28,24 +28,30 @@ const catsAPI = 'https://api.thecatapi.com/v1/breeds';
 
 
 // QUESTION 2
-const getLargestCountries = async () => {
-    const response = await fetch(countriesAPI);
-    const getData = await response.json();
 
-    try{
-        const area = Object.entries(getData).map(([key,value]) => {
-            
-            return sortArray
-            // return {
-            //     country: value.name,
-            //     area: value.area
-            // }
-        })
-        console.log(area)
-    }catch(error){
-        console.log(error)
+const getLargestCountries = async () => {
+    try {
+        const response = await fetch(countriesAPI);
+        const getData = await response.json();
+
+        const countriesWithArea = getData.map(country => {
+            return {
+                name: country.name,
+                area: country.area || 0  // Some countries might not have an area defined, so default to 0
+            }
+        });
+
+        // Sort the countries by area in descending order
+        countriesWithArea.sort((a, b) => b.area - a.area);
+
+        // Get the top 10 largest countries
+        const largestCountries = countriesWithArea.slice(0, 10);
+
+        console.log('The 10 largest countries by area:', largestCountries);
+    } catch (error) {
+        console.log('Error fetching the countries data:', error);
     }
-}
+};
 
 getLargestCountries();
 
