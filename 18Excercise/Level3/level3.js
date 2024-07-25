@@ -37,14 +37,10 @@ const getLargestCountries = async () => {
         const countriesWithArea = getData.map(country => {
             return {
                 name: country.name,
-                area: country.area || 0  // Some countries might not have an area defined, so default to 0
+                area: country.area || 0  
             }
         });
-
-        // Sort the countries by area in descending order
         countriesWithArea.sort((a, b) => b.area - a.area);
-
-        // Get the top 10 largest countries
         const largestCountries = countriesWithArea.slice(0, 10);
 
         console.log('The 10 largest countries by area:', largestCountries);
@@ -55,4 +51,24 @@ const getLargestCountries = async () => {
 
 getLargestCountries();
 
-// QUESTION 2
+// QUESTION 3
+const countTotalLanguages = async () => {
+    try {
+        const response = await fetch(countriesAPI);
+        const countriesData = await response.json();
+
+        const languages = new Set();
+
+        countriesData.forEach(country => {
+            if (country.languages) {
+                Object.values(country.languages).forEach(language => languages.add(language));
+            }
+        });
+
+        console.log(`Total number of unique official languages in the world: ${languages.size}`);
+    } catch (error) {
+        console.log('Error fetching the countries data:', error);
+    }
+};
+
+countTotalLanguages();
