@@ -1,4 +1,4 @@
-function Values (){
+function values (){
     let a = 5;
     let b =6;
 
@@ -9,6 +9,6 @@ function Values (){
     return addValues;
 }
 
-let findValues = Values();
+let findValues = values();
 
 console.log(findValues())
