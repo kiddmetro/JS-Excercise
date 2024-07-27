@@ -27,3 +27,38 @@ for (let i = 0; i <getAllId.length; i++) {
 
 // QUESTION 5
 getFourthId.textContent = `Fourth Paragraph`;
+
+// QUESTION 6
+
+// getFirstId.setAttribute('id','first-paragraph');
+// getFirstId.setAttribute('class','set-paragraph');
+// console.log(`Change of ID first paragraph:`,getFirstId);
+
+// getFirstId.id = 'first-paragraph';
+// getFirstId.className = 'set-paragraph';
+// console.log(`Change of ID first paragraph:`,getFirstId);
+
+
+// getSecondId.setAttribute('id','second-paragraph');
+// getSecondId.setAttribute('class','set-paragraph');
+// console.log(`Change of ID second paragraph:`,getSecondId);
+
+// getSecondId.id = 'second-paragraph';
+// getSecondId.className = 'set-paragraph';
+// console.log(`Change of ID second paragraph:`,getSecondId);
+
+getThirdId.setAttribute('id','third-paragraph');
+getThirdId.setAttribute('class','set-paragraph');
+console.log(`Change of ID third paragraph:`,getThirdId);
+
+// getThirdId.id = 'third-paragraph';
+// getThirdId.className = 'set-paragraph';
+// console.log(`Change of ID third paragraph:`,getThirdId);
+
+getFourthId.setAttribute('id','fourth-paragraph');
+getFourthId.setAttribute('class','set-paragraph');
+console.log(`Change of ID fourth paragraph:`,getFourthId);
+
+// getFourthId.id = 'fourth-paragraph';
+// getFourthId.className = 'set-paragraph';
+// cconsole.log(`Change of ID fourth paragraph:`,getFourthId);
