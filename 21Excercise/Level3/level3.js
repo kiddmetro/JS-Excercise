@@ -73,13 +73,52 @@ function getRandomColors(){
 }
 
 getHtmlTimer.style.padding = '10px';
-getHtmlTimer.style.fontWeight = 'bold';
+getHtmlTimer.style.fontWeight = '500';
 getHtmlTimer.style.textDecoration = 'none';
-getHtmlTimer.style.border = '1px solid black';
 getHtmlTimer.style.marginLeft = '200px';
 getHtmlTimer.style.marginRight = '200px';
 
 setInterval(function() {
     getHtmlTimer.style.background = getRandomColors();
 }, 1000);
+
+
+// complete the exercise
+const getUlTag = document.getElementsByTagName('ul');
+getUlTag[0].style.listStyleType = 'none';
+
+
+const getLiTag = document.getElementsByTagName('li');
+
+// * Completed challenge has background green
+
+getLiTag[0].style.textDecoration = 'none';
+getLiTag[0].style.background = '#51f351';
+getLiTag[0].style.padding = '10px';
+getLiTag[0].style.marginBottom = '5px';
+getLiTag[0].style.display = 'flex';
+getLiTag[0].style.fontFamily = 'san serif';
+getLiTag[0].style.fontSize = '11px';
+
+// * Ongoing challenge has background yellow
+getLiTag[1].style.background = '#ddf351';
+getLiTag[1].style.padding = '10px';
+getLiTag[1].style.marginBottom = '5px';
+getLiTag[1].style.display = 'flex';
+getLiTag[1].style.fontFamily = 'san serif';
+getLiTag[1].style.fontSize = '11px';
+
+// * Coming challenges have background red
+const getAllLiTag = document.querySelectorAll('li');
+const slicedElements = Array.from(getAllLiTag).slice(2);
+slicedElements.forEach((li) => {
+   li.style.background = '#fa7474';
+   li.style.padding = '10px';
+   li.style.marginBottom = '5px';
+   li.style.display = 'flex';
+   li.style.fontFamily = 'san serif';
+   li.style.fontSize = '11px';
+
+});
+
 
