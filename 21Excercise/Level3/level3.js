@@ -49,3 +49,37 @@ h2.style.fontSize = '1rem';
 h2.style.fontWeight = 'normal';
 
 // adding date and time
+
+const createTime = setInterval(function() {
+    const getTime = new Date().toLocaleTimeString();
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-US',{
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    return document.getElementById('timer').innerHTML = `${formattedDate} ${getTime}`;
+}, 1000);
+
+// change background color
+let getHtmlTimer = document.getElementById('timer');
+function getRandomColors(){
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for(let i=0; i < 6;i++){ 
+        color += letters[Math.floor(Math.random() * 16)]
+    }
+    return color;
+}
+
+getHtmlTimer.style.padding = '10px';
+getHtmlTimer.style.fontWeight = 'bold';
+getHtmlTimer.style.textDecoration = 'none';
+getHtmlTimer.style.border = '1px solid black';
+getHtmlTimer.style.marginLeft = '200px';
+getHtmlTimer.style.marginRight = '200px';
+
+setInterval(function() {
+    getHtmlTimer.style.background = getRandomColors();
+}, 1000);
+
