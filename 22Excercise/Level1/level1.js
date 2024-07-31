@@ -9,7 +9,7 @@ for (let i = 0; i <= 101; i++) {
     
     // general styling
     title.style.margin = '7px'
-    title.style.padding = '40px'
+    title.style.padding = '20px'
     title.style.display = 'flex'
     title.style.justifyContent = 'center'
     title.style.alignItems = 'center'
@@ -37,6 +37,7 @@ for (let i = 0; i <= 101; i++) {
 }
 
 let getDiv = document.getElementById('container')
+getDiv.style.width = '100px'
 getDiv.style.display = 'grid'
 getDiv.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr'
 
