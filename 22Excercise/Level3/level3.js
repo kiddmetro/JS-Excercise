@@ -92,6 +92,7 @@ const createTime = setInterval(function(){
 
 getDivId.appendChild(timerParagraph);
 
+
 // Loop through each challenge in challengeInfo.challenges
 challengeInfo.challenges.forEach(challenge => {
     // Create a div for each challenge
@@ -102,31 +103,47 @@ challengeInfo.challenges.forEach(challenge => {
     const challengeName = document.createElement('h3');
     challengeName.textContent = challenge.name;
     challengeDiv.appendChild(challengeName);
-
-    // Create and append the challenge status as a paragraph
-    const challengeStatus = document.createElement('p');
-    challengeStatus.textContent = `Status: ${challenge.status}`;
-    challengeDiv.appendChild(challengeStatus);
+    // styling for the challenge text
+    challengeName.style.fontWeight = 'normal';
+    challengeName.style.fontSize = '15px';
 
     // Create a details tag to hold the topics
     const detailsTag = document.createElement('details');
     const summaryTag = document.createElement('summary');
-    summaryTag.textContent = 'Topics';
-    detailsTag.appendChild(summaryTag);
 
-    // Loop through each topic and add it to the details tag
+    summaryTag.style.fontWeight = '700';
+    summaryTag.style.fontSize = '15px';
+
+    detailsTag.style.fontWeight = 'normal'
+
+    // Use only the first topic as the summary text
+    summaryTag.textContent = challenge.topics[0];
+    detailsTag.appendChild(summaryTag);
+  
+
+
+
+
+    // Loop through each topic and add it to the details
     challenge.topics.forEach(topic => {
         const topicItem = document.createElement('p');
         topicItem.textContent = topic;
         detailsTag.appendChild(topicItem);
     });
-
     // Append the details tag to the challengeDiv
     challengeDiv.appendChild(detailsTag);
 
+      // Create and append the challenge status as a paragraph
+      const challengeStatus = document.createElement('p');
+      challengeStatus.textContent = challenge.status;
+      challengeDiv.appendChild(challengeStatus);
+
+      // styling for the div containing the challenges
     challengeDiv.style.display = 'flex';
     challengeDiv.style.justifyContent = 'space-between'
-    challengeDiv.s
+    challengeDiv.style.alignItems = 'center'
+    challengeDiv.style.margin = '20px';
+    challengeDiv.style.padding = '0 20px'
 
     // Finally, append the challengeDiv to the wrapper div
     getDivId.appendChild(challengeDiv);
@@ -134,4 +151,4 @@ challengeInfo.challenges.forEach(challenge => {
 
 
 const getFirstDiv = document.getElementsByClassName('challenge')[0];
-getFirstDiv.style.background = 'black'
+getFirstDiv.style.background = '#51f351'
