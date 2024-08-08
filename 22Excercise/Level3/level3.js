@@ -19,9 +19,6 @@ const destructureObject = (obj) => {
   };
 };
 
-console.log(destructureObject(challengeInfo));
-
-
 // Body Styling
 const getBody =  document.getElementsByTagName('body')[0];
 
@@ -112,18 +109,14 @@ challengeInfo.challenges.forEach(challenge => {
     const summaryTag = document.createElement('summary');
 
     summaryTag.style.fontWeight = '700';
-    summaryTag.style.fontSize = '15px';
+    summaryTag.style.fontSize = '13px';
 
     detailsTag.style.fontWeight = 'normal'
 
-    // Use only the first topic as the summary text
-    summaryTag.textContent = challenge.topics[0];
+    const lastWord = challenge.name.split(' ').pop();
+    summaryTag.textContent = lastWord;
     detailsTag.appendChild(summaryTag);
-  
-
-
-
-
+ 
     // Loop through each topic and add it to the details
     challenge.topics.forEach(topic => {
         const topicItem = document.createElement('p');
@@ -143,7 +136,7 @@ challengeInfo.challenges.forEach(challenge => {
     challengeDiv.style.justifyContent = 'space-between'
     challengeDiv.style.alignItems = 'center'
     challengeDiv.style.margin = '20px';
-    challengeDiv.style.padding = '0 20px'
+    challengeDiv.style.padding = '0 40px'
 
     // Finally, append the challengeDiv to the wrapper div
     getDivId.appendChild(challengeDiv);
@@ -151,4 +144,23 @@ challengeInfo.challenges.forEach(challenge => {
 
 
 const getFirstDiv = document.getElementsByClassName('challenge')[0];
-getFirstDiv.style.background = '#51f351'
+getFirstDiv.style.background = '#51f351';
+getFirstDiv.style.fontFamily = 'san serif';
+getFirstDiv.style.fontSize = '11px';
+
+const getSecondDiv = document.getElementsByClassName('challenge')[1];
+getSecondDiv.style.background = '#ddf351';
+getSecondDiv.style.fontFamily = 'san serif';
+getSecondDiv.style.fontSize = '11px';
+
+const getAllChallenge = document.querySelectorAll('div');
+console.log(getAllChallenge);
+const slicedElements = Array.from(getAllChallenge).slice(3);
+slicedElements.forEach((challenge) => {
+   challenge.style.background = '#fa7474'; 
+   challenge.style.padding = '0 40px'
+   challenge.style.marginBottom = '5px';
+   challenge.style.display = 'flex';
+   challenge.style.fontFamily = 'san serif';
+   challenge.style.fontSize = '11px';
+});
