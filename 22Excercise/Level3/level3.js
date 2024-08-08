@@ -92,27 +92,46 @@ const createTime = setInterval(function(){
 
 getDivId.appendChild(timerParagraph);
 
-// The Tasks styling and Js
+// Loop through each challenge in challengeInfo.challenges
+challengeInfo.challenges.forEach(challenge => {
+    // Create a div for each challenge
+    const challengeDiv = document.createElement('div');
+    challengeDiv.className = 'challenge';
 
-// const destructChallenges = challengeInfo.challenges.map((challenge) => {
-//     return {
-//         challengeTitle: challenge.name,
-//         challengeSubtitle: challenge.challengeSubtitle,
-//         challengeYear: challenge.challengeYear,
-//         challenges: challenge.challenges,
-//         keywords: challenge.keywords,
-//         author: challenge.author
-//     }
-// })
-// console.log(destructChallenges);
+    // Create and append the challenge name as a header
+    const challengeName = document.createElement('h3');
+    challengeName.textContent = challenge.name;
+    challengeDiv.appendChild(challengeName);
 
-let createDivTag;
+    // Create and append the challenge status as a paragraph
+    const challengeStatus = document.createElement('p');
+    challengeStatus.textContent = `Status: ${challenge.status}`;
+    challengeDiv.appendChild(challengeStatus);
 
-for(let i = 0; i < challengeInfo.challenges.length; i++){
-   createDivTag = document.createElement('div');  
-   createDivTag.className = 'topics';
-   createDivTag.textContent = challengeInfo.challenges[i];
-   getDivId.appendChild(createDivTag)
-}
+    // Create a details tag to hold the topics
+    const detailsTag = document.createElement('details');
+    const summaryTag = document.createElement('summary');
+    summaryTag.textContent = 'Topics';
+    detailsTag.appendChild(summaryTag);
 
-console.log(createDivTag)
+    // Loop through each topic and add it to the details tag
+    challenge.topics.forEach(topic => {
+        const topicItem = document.createElement('p');
+        topicItem.textContent = topic;
+        detailsTag.appendChild(topicItem);
+    });
+
+    // Append the details tag to the challengeDiv
+    challengeDiv.appendChild(detailsTag);
+
+    challengeDiv.style.display = 'flex';
+    challengeDiv.style.justifyContent = 'space-between'
+    challengeDiv.s
+
+    // Finally, append the challengeDiv to the wrapper div
+    getDivId.appendChild(challengeDiv);
+});
+
+
+const getFirstDiv = document.getElementsByClassName('challenge')[0];
+getFirstDiv.style.background = 'black'
