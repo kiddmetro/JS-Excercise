@@ -208,7 +208,7 @@ const { bio } = challengeInfo.author;
 
 // Create a new div element to hold the bio
 const bioDiv = document.createElement('div');
-// bioDiv.className = 'bio';
+bioDiv.className = 'bio';
 bioDiv.style.marginTop = '30px';
 getDivId.appendChild(bioDiv);
 
@@ -217,7 +217,6 @@ const bioParagraph = document.createElement('p');
 bioParagraph.textContent = bio;
 bioParagraph.style.fontFamily = 'arial';
 bioParagraph.style.fontSize = '13px';
-bioParagraph.style.width = '600px';
 bioParagraph.style.margin = '0 100px';
 bioDiv.appendChild(bioParagraph);
 
@@ -286,3 +285,25 @@ informationDiv.appendChild(qualificationsDiv);
 
 
 
+// Create a container div for all keywords
+const keywordsContainer = document.createElement('div');
+keywordsContainer.className = 'keywords-container';
+keywordsContainer.style.display = 'flex';
+keywordsContainer.style.flexWrap = 'wrap';
+keywordsContainer.style.gap = '10px';
+keywordsContainer.style.padding = '10px';
+
+// Loop through each keyword and create a div with a random background color
+challengeInfo.keywords.forEach(keyword => {
+  const keywordDiv = document.createElement('div');
+  keywordDiv.textContent = `#${keyword}`;
+  keywordDiv.style.backgroundColor = getRandomColors(); // Use the function to get a random color
+  keywordDiv.style.padding = '5px 10px';
+  keywordDiv.style.borderRadius = '15px';
+  keywordDiv.style.fontWeight = 'bold';
+  keywordDiv.style.fontStyle = 'italic';
+  keywordsContainer.appendChild(keywordDiv);
+});
+
+// Append the keywords container to the body or a specific section of your HTML
+getDivId.appendChild(keywordsContainer);
