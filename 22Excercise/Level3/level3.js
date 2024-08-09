@@ -1,24 +1,3 @@
-const destructureObject = (obj) => {
-  const {
-    description,
-    challengeTitle,
-    challengeSubtitle,
-    challengeYear,
-    challenges,
-    keywords,
-    author
-  } = obj;
-  return {
-    description,
-    challengeTitle,
-    challengeSubtitle,
-    challengeYear,
-    challenges,
-    keywords,
-    author
-  };
-};
-
 // Body Styling
 const getBody =  document.getElementsByTagName('body')[0];
 
@@ -90,7 +69,7 @@ const createTime = setInterval(function(){
 getDivId.appendChild(timerParagraph);
 
 
-// Loop through each challenge in challengeInfo.challenges
+// Creating the Challenge Elements
 challengeInfo.challenges.forEach(challenge => {
     // Create a div for each challenge
     const challengeDiv = document.createElement('div');
@@ -194,7 +173,7 @@ const socialLinksDiv = document.createElement('div');
 socialLinksDiv.style.display = 'flex';
 socialLinksDiv.style.justifyContent = 'center';
 socialLinksDiv.style.alignItems = 'center';
-socialLinksDiv.style.width = '500px';
+// socialLinksDiv.style.width = '500px';
 getDivId.appendChild(socialLinksDiv);
 
 let createSocialLinks;
@@ -204,8 +183,6 @@ for(let i = 0; i < 3; i++){
     createSocialLinks.className = 'social-links';
     createSocialLinks.style.fontSize = '2.5em';
     createSocialLinks.style.color = 'black';
-    
-
     socialLinksDiv.appendChild(createSocialLinks);
 }
 
@@ -217,8 +194,95 @@ getFirstLinks.style.marginRight = '5px';
 const getSecondLinks = document.getElementsByClassName('social-links')[1];
 getSecondLinks.href = twitter.url;
 getSecondLinks.innerHTML =  twitter.fontawesomeIcon;
+getSecondLinks.style.marginRight = '5px';
 
 const getThirdLinks = document.getElementsByClassName('social-links')[2];
 getThirdLinks.href = github.url;
 getThirdLinks.innerHTML =  github.fontawesomeIcon;
+getThirdLinks.style.marginRight = '5px';
+
+// Get the Bio of the Author
+
+// Destructure the bio object from the author object
+const { bio } = challengeInfo.author;
+
+// Create a new div element to hold the bio
+const bioDiv = document.createElement('div');
+// bioDiv.className = 'bio';
+bioDiv.style.marginTop = '30px';
+getDivId.appendChild(bioDiv);
+
+// create bio p tag
+const bioParagraph = document.createElement('p');
+bioParagraph.textContent = bio;
+bioParagraph.style.fontFamily = 'arial';
+bioParagraph.style.fontSize = '13px';
+bioParagraph.style.width = '600px';
+bioParagraph.style.margin = '0 100px';
+bioDiv.appendChild(bioParagraph);
+
+
+// Author Information
+const { titles, skills, qualifications } = challengeInfo.author;
+
+// Create the information container div
+const informationDiv = document.createElement('div');
+informationDiv.className = 'author-info';
+informationDiv.style.display = 'flex';
+informationDiv.style.justifyContent = 'space-between';
+informationDiv.style.alignItems = 'center';
+// informationDiv.style.margin = '0 50px';
+getDivId.appendChild(informationDiv);
+console.log(informationDiv);
+
+
+// Create a div for titles
+const titlesDiv = document.createElement('div');
+titlesDiv.className = 'titles';
+titlesDiv.innerHTML = `<h4>Titles</h4>`;
+
+// Add each title (with emoji) to the titles div
+titles.forEach(title => {
+    const titleItem = document.createElement('p');
+    titleItem.textContent = `${title[0]} ${title[1]}`;
+    titleItem.style.display = 'flex';
+    titleItem.style.alignItems = 'flex-start';
+    titlesDiv.appendChild(titleItem);
+});
+
+// Create a div for skills
+const skillsDiv = document.createElement('div');
+skillsDiv.className = 'skills';
+skillsDiv.style.marginTop = '40px';
+skillsDiv.innerHTML = `<h4>Skills</h4>`;
+
+// Add each skill (with a checkmark emoji) to the skills div
+skills.forEach(skill => {
+    const skillItem = document.createElement('p');
+    skillItem.textContent = `✅ ${skill}`;
+    skillItem.style.display = 'flex';
+    skillItem.style.alignItems = 'flex-start';
+    skillsDiv.appendChild(skillItem);
+});
+
+// Create a div for qualifications
+const qualificationsDiv = document.createElement('div');
+qualificationsDiv.className = 'qualifications';
+qualificationsDiv.innerHTML = `<h4>Qualifications</h4>`;
+
+// Add each qualification (with an emoji) to the qualifications div
+qualifications.forEach(qualification => {
+    const qualificationItem = document.createElement('p');
+    qualificationItem.innerHTML = `🧑‍🎓 ${qualification}`;
+    qualificationItem.style.display = 'flex';
+    qualificationItem.style.alignItems = 'flex-start';
+    qualificationsDiv.appendChild(qualificationItem);
+});
+
+// Append the titles, skills, and qualifications divs to the main container
+informationDiv.appendChild(titlesDiv);
+informationDiv.appendChild(skillsDiv);
+informationDiv.appendChild(qualificationsDiv);
+
+
 
