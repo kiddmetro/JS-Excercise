@@ -164,3 +164,61 @@ slicedElements.forEach((challenge) => {
    challenge.style.fontFamily = 'san serif';
    challenge.style.fontSize = '11px';
 });
+
+
+// Get Author
+// Destructure the first name and last name from the author object
+const { firstName, lastName } = challengeInfo.author;
+
+const getAuthor = document.createElement('h2');
+
+getAuthor.textContent = `${firstName} ${lastName}`;
+getAuthor.style.fontFamily = 'arial';
+getAuthor.style.margin = '20px';
+getAuthor.style.padding = '0 40px'
+getAuthor.style.letterSpacing = '1px';
+
+getDivId.appendChild(getAuthor);
+
+// Get Social Links
+// Destructure the socialLinks array from the author object
+const { socialLinks } = challengeInfo.author;
+
+// Filter out the LinkedIn, Twitter, and GitHub handles from the socialLinks array
+const linkedIn = socialLinks.find(link => link.social === 'LinkedIn');
+const twitter = socialLinks.find(link => link.social === 'Twitter');
+const github = socialLinks.find(link => link.social === 'Github');
+
+// Create a new div element to hold the social links
+const socialLinksDiv = document.createElement('div');
+socialLinksDiv.style.display = 'flex';
+socialLinksDiv.style.justifyContent = 'center';
+socialLinksDiv.style.alignItems = 'center';
+socialLinksDiv.style.width = '500px';
+getDivId.appendChild(socialLinksDiv);
+
+let createSocialLinks;
+
+for(let i = 0; i < 3; i++){
+    createSocialLinks = document.createElement('a');
+    createSocialLinks.className = 'social-links';
+    createSocialLinks.style.fontSize = '2.5em';
+    createSocialLinks.style.color = 'black';
+    
+
+    socialLinksDiv.appendChild(createSocialLinks);
+}
+
+const getFirstLinks = document.getElementsByClassName('social-links')[0];
+getFirstLinks.href = linkedIn.url;
+getFirstLinks.innerHTML =  linkedIn.fontawesomeIcon;
+getFirstLinks.style.marginRight = '5px';
+
+const getSecondLinks = document.getElementsByClassName('social-links')[1];
+getSecondLinks.href = twitter.url;
+getSecondLinks.innerHTML =  twitter.fontawesomeIcon;
+
+const getThirdLinks = document.getElementsByClassName('social-links')[2];
+getThirdLinks.href = github.url;
+getThirdLinks.innerHTML =  github.fontawesomeIcon;
+

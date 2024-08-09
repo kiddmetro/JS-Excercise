@@ -60,16 +60,16 @@ const challengeInfo = {
         {
           social: 'LinkedIn',
           url: 'https://www.linkedin.com/in/asabeneh/',
-          fontawesomeIcon: '<i class="fab fa-linkedin">'
+          fontawesomeIcon: '<i class="	fa fa-linkedin-square">'
         },
         {
           social: 'Twitter',
           url: 'https://twitter.com/Asabeneh',
-          fontawesomeIcon: '<i class="fab fa-twitter-square"></i>'
+          fontawesomeIcon: '<i class="	fa fa-twitter"></i>'
         },
         {
           social: 'Github',
-          fontawesomeIcon: '<i class="fab fa-github-square"></i>',
+          fontawesomeIcon: '<i class="	fa fa-github"></i>',
           url: 'https://github.com/Asabeneh'
         },
         {
