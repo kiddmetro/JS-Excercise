@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document Object Model:30 Days Of JavaScript</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Number Generator</h1>
+    <h2>30DaysOfJavascript:DOM:30 Days</h2>
+    <!-- <p></p> -->
+    <div class="section">
+      <p id="warning">Please enter a valid number!</p>
+      <input type="text" id="generate-input" placeholder="Generate random numbers" />
+      <button type="button" id="generate-button" >Generate Numbers</button>
+      <div id="container"></div>
+    </div>
+  </div>
+  
+    <script>
+      // align items center
+      const getDiv = document.getElementsByClassName('wrapper');
+      const getBody = document.getElementsByTagName('body')[0];
+
+      getBody.style.width = 'auto';
+      getBody.style.height = '100vh';
+      getBody.style.display = 'flex';
+      getBody.style.justifyContent = 'center';
+
+      getDiv[0].style.justifyContent = 'center';
+      getDiv[0].style.textAlign = 'center';
+
+      // header one styling
+      const h1 = document.querySelector('h1');
+      h1.style.color = 'rgb(0, 194, 0)';
+
+      // header two styling
+      const h2 = document.querySelector('h2');
+      h2.style.fontFamily = 'san serif';
+      h2.style.fontSize = '1rem';
+      h2.style.fontWeight = 'normal';
+      h2.style.marginTop = '-20px';
+     
+      const button = document.querySelector('button')
+      const input = document.querySelector('input');
+      const warning = document.getElementById('warning');
+
+      // Warning Message Styling
+      warning.style.color = 'red';
+      warning.style.display = 'none';
+
+      // Input event to validate number
+      input.addEventListener('input', () => {
+        const userInput = input.value;
+
+        // Check if input is a valid number
+        if (isNaN(userInput) || userInput.trim() === '') {
+          warning.style.display = 'block';
+        } else {
+          warning.style.display = 'none';
+        }
+      });
+
+      
+      // Button
+      button.addEventListener('click', () => {
+        // Main Input
+        const userInput = parseInt(input.value);
+        // If the input is empty or not a valid number, default to 50
+        if (isNaN(userInput) || userInput <= 0) {
+          userInput = 50;
+        }
+
+          for (let i = 0; i <= userInput; i++) {
+          title = document.createElement('p');
+          title.className = 'title';
+          title.style.fontSize = '30px';
+          title.style.color = '#fff';
+          title.textContent = i;
+          
+          // general styling
+          title.style.margin = '2px'
+          title.style.padding = '0 30px'
+          title.style.display = 'flex'
+          title.style.justifyContent = 'center'
+          title.style.alignItems = 'center'
+
+          // background color logic
+          let checker = parseInt(title.textContent)
+          if (checker % 2 === 0 ){
+              title.style.background = 'rgb(0, 194, 0)'
+          }else{
+              title.style.background = 'rgb(255, 221, 0)'
+          }
+
+          function isPrime(num) {
+              if (num <= 1) return false;
+              for (let i = 2; i <= Math.sqrt(num); i++) {
+                  if (num % i === 0) return false;
+              }
+              return true;
+          }
+        
+          if (isPrime(checker)) {
+              title.style.background = 'rgb(197, 1, 40)'; // Prime numbers
+          }
+
+          document.getElementById('container').appendChild(title)
+        }
+
+        let containerDiv = document.getElementById('container')
+        containerDiv.style.display = 'grid';
+        containerDiv.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+        containerDiv.style.marginTop = '20px';
+
+
+        });
+
+      // input styling
+      input.style.width = '400px';
+      input.style.height = '30px';
+
+      button.style.height = '35px';
+      button.style.border = 'none';
+      button.style.background = 'rgb(0, 194, 0)';
+      button.style.color = '#fff';
+
+    </script>
+</body>
+
+</html>
