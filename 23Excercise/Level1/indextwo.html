@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Object Model: 30 Days Of JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Key events: Press any key</h1>
+    <p>Key Pressed: <span id="key"></span></p>
+    <p>Key Code: <span id="key-code"></span></p>
+
+    <script>
+      document.body.addEventListener('keypress', e => {
+        // Display the key pressed
+        document.getElementById('key').textContent = e.key;
+        // Display the key code
+        document.getElementById('key-code').textContent = e.keyCode || e.which;
+      });
+    </script>
+  </body>
+</html>
